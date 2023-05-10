@@ -6,7 +6,7 @@ document.write(A);
 
 var B = "Louise said,\"GET OUTTA HERE!\""; 
 
-document.write(B);
+window.alert(B);
 
 var C = "It was once a rabbit,"     // Practicing connecting strings together
 + " and now it is a meal.";
@@ -25,3 +25,9 @@ function My_First_Function() {                        //Defining a function and 
     var str = "This is the button text!";             //Defining a variable and giving it a string value
     document.getElementById("Button_Text").innerHTML = str;     //Putting the value of the variable into the HTML elementFromPoint with the Button Text ID
 }
+
+var Sent1 ="This is the beginning of the string";
+
+var Sent2 =" and this is the end of the string";
+
+document.write(Sent1 + Sent2);
