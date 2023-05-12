@@ -43,3 +43,11 @@ Y--;
 document.write(Y);
 
 window.alert(Math.random() * 100);
+
+function Euler() {
+    var a = Math.E;
+    document.getElementById("Math").innerHTML = a;
+}
+
+  
+  random(1, 10);
