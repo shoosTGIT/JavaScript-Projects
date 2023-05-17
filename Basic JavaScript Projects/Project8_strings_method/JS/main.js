@@ -12,3 +12,27 @@ function slice_Method() {
     var Section = Sentence.slice(27,33);
     document.getElementById("Slice").innerHTML = Section;
 }
+
+let text = "Spider-Man has an interesting set of skills.";
+let position = text.search("interesting");
+
+let Text = "Hello World!";
+let result = text.toUpperCase();
+
+function string_Method() {
+    var X = 182;
+    document.getElementById("Numbers_to_string").innerHTML = X.toString();
+}
+
+function precision_Method() {
+    var X = 12938.3012987376112
+    document.getElementById("Precision").innerHTML = X.toPrecision(10);
+}
+
+let TexT = "Hello World!";
+let Result = text.valueOf();
+document.write(Result);
+
+let num = 5.56789;
+let n = num.toFixed(2);
+document.write(n);
