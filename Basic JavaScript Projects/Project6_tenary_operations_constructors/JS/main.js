@@ -17,3 +17,13 @@ var Erik = new Vehicle("Ford", "Pinto", 1971, "Mustard");
 function myFunction() {
     document.getElementById("Keywords_and_Constructors").innerHTML = "Erik drives a " + Erik.Vehicle_Color + "-colored " + Erik.Vehicle_Model + " manufactured in " + Erik.Vehicle_Year;
 }
+
+function count_Function() {                                     //defining my first function
+    document.getElementById("Counting").innerHTML = Count();    //setting the element to be used
+    function Count() {                                          //starting my nested function
+        var Starting_point = 9;                                 //setting the starting point
+        function Plus_one() {Starting_point += 1};              //making the formula for the function to make.
+        Plus_one();                                             
+        return Starting_point;
+    }
+}
