@@ -2,9 +2,10 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  height: 400px;
+  width: 600px;
   position: relative;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* Hide the images by default */
@@ -57,6 +58,9 @@
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* The dots/bullets/indicators */
@@ -86,10 +90,24 @@
   to {opacity: 1}
 }
 
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
 /* img scaling */
 
 img {
-    width: 150px;
-    height: 200px;
-    object-fit: contain;
+   vertical-align: middle;
+}
+
+
+.mySlides_fade {
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.mySlides img {
+  width: 100%;
+  transition: all 0.3s ease;
+  border: 8px solid white;
 }
