@@ -206,7 +206,7 @@ function clear() {
 //This function resets the game
 function resetGame() {
     //This for loop iterates through each HTML square element.
-    for (let i = 0; i < 0; i++) {
+    for (let i = 0; i < 9; i++) {
         //This variable gets the HTML element i.
         let square = document.getElementById(String(i));
         //This removes our elements backgroundImage.
