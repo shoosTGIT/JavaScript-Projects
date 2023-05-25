@@ -43,7 +43,26 @@ function placeXOrO(squareNumber) {
         //returning true is needed for our computersTurn() function to work.
         return true;
     }
-
+    //this function results in a random square being selected by the computer.
+    function computersTurn() {
+        //This boolean is needed for our while loop.
+        let success = false;
+        //this variable stores a random number 0-8.
+        let pickASquare;
+        //this condition allows our while loop to keep trying if a square is selected already.
+        while (!success) {
+            //a random number between 0-8 is selected.
+            pickASquare = String(Math.floor(Math.random() * 9));
+            //IF the random number evualuated returns true, the square hasn't been selected yet.
+            if (placeXOrO(pickASquare)) {
+                //This line calls the function
+                placeXOrO(pickASquare);
+                //This changes our boolean and ends the loop.
+                success = true;
+            };
+        }
+    }
+}
 //This function parses the selectedSquares array to search for win conditions. drawLine() function is called to draw a line on the screen if the condition is met.
 function checkWinConditions() {
     // X 0, 1, 2 condition.
@@ -84,14 +103,14 @@ function checkWinConditions() {
         setTimeout(function () { resetGame(); }, 500);
     }
     //This function checks if an array includes 3 strings. It is used to check for each win condition.
-    function arrayIncludes(squareA, squareB, squareC) {
-        //These 3 variables will be used to check for 3 in a row.
-        const a = selectedSquares.includes(squareA);
-        const b = selectedSquares.includes(squareB);
-        const c = selectedSquares.includes(squareC);
-        //If the 3 varaibles we pass are all included in our array then
-        //true is returned and our else if condition executes the drawLine() function.
-        if (a === true && b === true && c === true) { return true; }
+function arrayIncludes(squareA, squareB, squareC) {
+    //These 3 variables will be used to check for 3 in a row.
+    const a = selectedSquares.includes(squareA);
+    const b = selectedSquares.includes(squareB);
+    const c = selectedSquares.includes(squareC);
+    //If the 3 varaibles we pass are all included in our array then
+    //true is returned and our else if condition executes the drawLine() function.
+    if (a === true && b === true && c === true) { return true; }
     }
 }
 
@@ -111,26 +130,8 @@ function audio(audioURL) {
     audio.play();
 }
 
-    //this function results in a random square being selected by the computer.
-function computersTurn() {
-    //This boolean is needed for our while loop.
-    let success = false;
-    //this variable stores a random number 0-8.
-    let pickASquare;
-    //this condition allows our while loop to keep trying if a square is selected already.
-    while (!sucess) {
-        //a random number between 0-8 is selected.
-        pickASquare = String(Math.floor(Math.random() * 9));
-        //IF the random number evualuated returns true, the square hasn't been selected yet.
-        if (placeXOrO(pickASquare)) {
-            //This line calls the function
-            placeXOrO(pickASquare);
-            //This changes our boolean and ends the loop.
-            sucess = true;
-        };
-        }
-    }
-}
+
+
 
 //This function utilizes HTML canvas to draw win lines.
 function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
@@ -184,13 +185,13 @@ function animateLineDrawing() {
         if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop); }
         }
     }
-    function clear() {
-        //This line starts our animation loop.
-        const animationLoop = requestAnimationFrame(clear);
-        //This line clears our canvas.
-        c.clearRect(0, 0, 608, 608);
-        //This line stops our animation loop.
-        cancelAnimationFrame(animationLoop);
+function clear() {
+    //This line starts our animation loop.
+    const animationLoop = requestAnimationFrame(clear);
+    //This line clears our canvas.
+    c.clearRect(0, 0, 608, 608);
+    //This line stops our animation loop.
+    cancelAnimationFrame(animationLoop);
     }
     //this line disallows clicking while the win sound is playing
     disableClick();
